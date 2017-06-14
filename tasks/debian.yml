@@ -1,4 +1,9 @@
 ---
+- name: debian | update package list
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
 - name: debian | Installing Pre-Reqs
   apt:
     name: "{{ item }}"
@@ -7,6 +12,11 @@
     - 'apt-transport-https'
     - 'ca-certificates'
     - 'python-pip'
+
+- name: debian |  Upgrade pip
+  pip:
+    name: pip
+    extra_args: --upgrade
 
 - name: debian | Installing Python Modules
   pip:
