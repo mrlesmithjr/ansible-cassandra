@@ -12,6 +12,7 @@
     - 'apt-transport-https'
     - 'ca-certificates'
     - 'python-pip'
+    - 'libssl-dev'
 
 - name: debian |  Upgrade pip
   pip:
